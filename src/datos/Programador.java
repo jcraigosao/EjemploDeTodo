@@ -5,6 +5,10 @@
  */
 package datos;
 
+import excepciones.LenguajeExcepcion;
+import excepciones.NombreExcepcion;
+import excepciones.SalarioExcepcion;
+
 /**
  *
  * @author Profe
@@ -12,9 +16,14 @@ package datos;
 public class Programador extends Empleado{
     protected String lenguaje;
 
-    public Programador(int id, String nombre, double salario,String lenguaje) {
+    public Programador(int id, String nombre, double salario,String lenguaje) 
+            throws NombreExcepcion, SalarioExcepcion, LenguajeExcepcion {
         super(id, nombre, salario);
+        
+        if(lenguaje.equalsIgnoreCase("go"))
+            throw new LenguajeExcepcion();
         this.lenguaje = lenguaje;
+        
     }
     
     @Override
@@ -28,6 +37,10 @@ public class Programador extends Empleado{
     @Override
     public String mostrarInformacion() {
        return "Programador " + this.nombre + " " + this.lenguaje;
+    }
+
+    public String getLenguaje() {
+        return lenguaje;
     }
     
     

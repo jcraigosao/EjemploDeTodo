@@ -21,6 +21,10 @@ public class CasaSoftware {
     public void adicionarContrato(Contrato contrato){
       this.contratos.add(contrato);
     }
+
+    public ArrayList<Contrato> getContratos() {
+        return contratos;
+    }
     
     public double calcularSalarioTotal(){
         double salarioTotal = 0;

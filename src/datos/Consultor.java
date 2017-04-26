@@ -22,5 +22,18 @@ public class Consultor implements Contrato{
     public String mostrarInformacion() {
         return "Consultor"  + this.id + " " + this.labor;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getLabor() {
+        return labor;
+    }
+
+    public Consultor(int id, String labor) {
+        this.id = id;
+        this.labor = labor;
+    }
     
 }
