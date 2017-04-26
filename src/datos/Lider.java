@@ -34,13 +34,13 @@ public class Lider extends Programador{
    
     @Override
     public double calcularSalario(){
-      double salarioTotal = this.calcularSalario();
+      double salarioTotal = super.calcularSalario();
       salarioTotal+=(salarioTotal*(this.equipo.size()*0.1));
       return salarioTotal;
     }
     @Override
     public String mostrarInformacion(){
-       String informacion = this.mostrarInformacion();
+       String informacion = super.mostrarInformacion();
        informacion+=" -- Equipo ---\n";
         for (Programador programador : equipo) {
             informacion += " " + programador.mostrarInformacion();
